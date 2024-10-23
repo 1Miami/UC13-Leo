@@ -40,7 +40,10 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
 
     const messageElement = document.getElementById('message');
     if (response.ok) {
-        window.location.href = 'acesso.html';
+        messageElement.textContent = 'Usuário registrado com sucesso!';
+        setTimeout(() => {
+            window.location.href = 'acesso.html';
+        }, 2000);
     } else {
         const errorMessage = await response.text();
         messageElement.textContent = errorMessage;
